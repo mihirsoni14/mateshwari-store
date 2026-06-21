@@ -33,6 +33,10 @@ class MateshwariThemeServiceProvider extends ServiceProvider
         Event::listen('bagisto.admin.layout.head', function($viewRenderEventManager) {
             $viewRenderEventManager->addTemplate('mateshwaritheme::admin.layouts.style');
         });
+
+        $this->publishes([
+            __DIR__ . '/../Resources/views' => resource_path('themes/mateshwari/views'),
+        ], 'mateshwari-theme-views');
     }
 
     /**
